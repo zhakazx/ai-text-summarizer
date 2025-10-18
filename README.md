@@ -37,3 +37,6 @@ SwiftSum is a Next.js app that generates fast, accurate summaries using the Gemi
 
 ## Deploy
 - Supports Vercel out of the box. Set `GEMINI_API_KEY` in Vercel project settings.
+
+## License
+This project is licensed under the [MIT License](./LICENSE).
