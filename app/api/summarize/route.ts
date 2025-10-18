@@ -34,10 +34,10 @@ export async function POST(req: Request) {
       contents: makePrompt(text, format),
     });
 
-    const summary = (response as any).text ?? "";
+    const summary = (response as { text?: string }).text ?? "";
 
     return NextResponse.json({ summary, format });
-  } catch (err: any) {
+  } catch (err: unknown) {
     if (err instanceof z.ZodError) {
       return NextResponse.json(
         { error: "Invalid request", details: err.flatten() },

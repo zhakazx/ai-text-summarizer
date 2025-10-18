@@ -52,7 +52,7 @@ export default function Home() {
       const data = await response.json()
       setSummary(data.summary)
     } catch (err) {
-      setError('Failed to summarize text. Please try again.')
+      setError(`Failed to summarize text. Please try again. Error: ${err}`)
     } finally {
       setIsLoading(false)
     }
