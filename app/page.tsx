@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { CopyButton } from "@/components/ui/copy-button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -62,24 +62,43 @@ export default function Home() {
     <div className="min-h-screen bg-background dark:from-slate-900 dark:to-slate-800">
       <Header />
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 max-w-7xl">
-        <div className="text-center mb-12 relative">
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 py-8 max-w-7xl">
+        <header className="text-center mb-12 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-green-500/10 rounded-3xl blur-3xl"></div>
           <div className="relative z-10 space-y-6">
-            <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
               <span className="text-primary">
                 AI Text Summarizer
               </span>
-            </h2>
+            </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Transform long text into concise, meaningful summaries using advanced AI technology
+              Transform long text into concise, meaningful summaries using advanced AI technology. 
+              Free, fast, and supports multiple languages.
             </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1">
+                ✨ AI-Powered
+              </span>
+              <span className="flex items-center gap-1">
+                🌍 Multi-Language
+              </span>
+              <span className="flex items-center gap-1">
+                🆓 Free to Use
+              </span>
+              <span className="flex items-center gap-1">
+                ⚡ Instant Results
+              </span>
+            </div>
           </div>
-        </div>
+        </header>
 
+      </section>
+
+      {/* Main Application */}
+      <main className="container mx-auto px-4 pb-8 max-w-7xl">
         {/* Controls Section */}
-        <div className="max-w-4xl mx-auto mb-8">
+        <section className="max-w-4xl mx-auto mb-8" aria-label="Summarization Controls">
           <Card className="border-2 border-dashed border-muted-foreground/20 bg-gradient-to-br from-background to-muted/20 shadow-lg">
             <CardContent>
               <div className="flex flex-col justify-center items-center space-y-6">
@@ -123,9 +142,10 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </section>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        {/* Input and Output Section */}
+        <section className="grid lg:grid-cols-2 gap-8" aria-label="Text Input and Summary Output">
           {/* Input Section */}
           <Card className="group hover:shadow-xl transition-all duration-300">
             <CardHeader className="pb-1">
@@ -133,9 +153,9 @@ export default function Home() {
                 <div className="p-2 rounded-lg bg-secondary">
                   <FileText className="h-5 w-5 text-foreground" />
                 </div>
-                <span className="font-bold">
+                <h2 className="font-bold text-lg">
                   Input Text
-                </span>
+                </h2>
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -171,9 +191,9 @@ export default function Home() {
                   <div className="p-2 rounded-lg bg-secondary transition-transform">
                     <FileText className="h-5 w-5 text-foreground" />
                   </div>
-                  <span className="font-bold">
+                  <h2 className="font-bold text-lg">
                     Summary
-                  </span>
+                  </h2>
                 </div>
                 {summary && (
                   <div className="flex items-center gap-2">
@@ -206,7 +226,7 @@ export default function Home() {
               )}
             </CardContent>
           </Card>
-        </div>
+        </section>
       </main>
 
       <Footer />

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://text-summarizer.zhakazx.com/sitemap.xml
+
+# Block access to API routes for crawlers
+User-agent: *
+Disallow: /api/
